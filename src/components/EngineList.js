@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
 import { setEngineProducts } from '../state/actions/engineActions';
@@ -33,13 +33,17 @@ const Engines = () => {
     return (
         <div>
             <div>Engine List</div>
-            <Container>
+            {Object.keys(engines.engines).length == 0 ? (<Spinner animation="border" role="status">
+  <span className="visually-hidden">Loading...</span>
+</Spinner>) : <Container>
                 <Row>
                     {renderList}
                 </Row>
             </Container>
 
+        }
         </div>
+            
     )
 };
 

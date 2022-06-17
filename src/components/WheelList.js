@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
 import { setWheelProducts } from '../state/actions/wheelActions';
@@ -33,12 +33,15 @@ const Wheels = () => {
     return (
         <div>
             <div>Wheel List</div>
-            <Container>
+            {Object.keys(wheels.wheels).length == 0 ? (<Spinner animation="border" role="status">
+  <span className="visually-hidden">Loading...</span>
+</Spinner>) : <Container>
                 <Row>
                     {renderList}
                 </Row>
             </Container>
 
+        }
         </div>
     )
 };

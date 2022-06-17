@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
 import { setOptionalProducts } from '../state/actions/optionalActions';
@@ -33,12 +33,15 @@ const Optionals = () => {
     return (
         <div>
             <div>Optional List</div>
-            <Container>
+            {Object.keys(optionals.optionals).length == 0 ? (<Spinner animation="border" role="status">
+  <span className="visually-hidden">Loading...</span>
+</Spinner>) : <Container>
                 <Row>
                     {renderList}
                 </Row>
             </Container>
 
+        }
         </div>
     )
 };

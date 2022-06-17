@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState }from "react";
 import { useSelector } from 'react-redux';
-import { Button } from "react-bootstrap";
+import { Button, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const ResultView = () => {
+
+    const [isLoading, setIsLoading] = useState(false)
 
     const result = useSelector((state) => state.result);
 
@@ -29,7 +31,8 @@ const ResultView = () => {
                         TotalPrice: result.total };
 
     const createResultInDbAndNavigate = async () => {
-        const response = await axios.post("https://localhost:44363/api/result", resultModel).catch((err) => {
+        setIsLoading(true);
+        const response = await axios.post("https://localhost:44363/api/result", resultModel).then(() => setIsLoading(false)).catch((err) => {
             console.log(err)
         });
         
@@ -48,7 +51,10 @@ const ResultView = () => {
             <br />
             {renderList}            
             <h2>Total Price: {result.total} €</h2>
-            <Button disabled={!enableButton} onClick={() => createResultInDbAndNavigate()} variant="success" >View Summary</Button>
+            {isLoading ? <Spinner animation="border" role="status">
+  <span className="visually-hidden">Loading...</span>
+</Spinner> : <Button disabled={!enableButton} onClick={() => createResultInDbAndNavigate()} variant="success" >View Summary</Button>}
+            
         </div>
     );
 };
