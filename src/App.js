@@ -1,8 +1,8 @@
 import './App.css';
 import Header from "./components/Header"
 import ProductListing from './components/ProductListing';
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import ResultView from './components/ResultView';
+import ResultSummary from './components/ResultSummary';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {  
   return (
@@ -11,7 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<ProductListing/>} />
-          <Route path="/result/:UrlCode" element={<ResultView/>} />
+          <Route path="/result/:urlCode" element={<ResultSummary/>} />
           <Route>404 Not Found</Route>
         </Routes>      
       </Router>

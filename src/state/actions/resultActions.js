@@ -1,5 +1,12 @@
 import { ResultActionTypes } from "../constants/actionTypes"
 
+export const setPrice = (amount) => {
+    return {
+        type: ResultActionTypes.SET_PRICE,
+        payload: amount
+    };
+};
+
 export const addPrice = (amount) => {
     return {
         type: ResultActionTypes.ADD_PRICE,
@@ -63,5 +70,12 @@ export const selectOptional = (paint) => {
 export const deselectOptional = () => {
     return {
         type: ResultActionTypes.OPTIONAL_DESELECTED
+    };
+};
+
+export const setOrderComplete = (isComplete) => {
+    return {
+        type: ResultActionTypes.SET_ORDER_COMPLETE,
+        payload: isComplete
     };
 };
