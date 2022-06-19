@@ -12,7 +12,7 @@ const Wheels = () => {
     const dispatch = useDispatch();
 
     const fetchWheels = async () => {
-        const response = await axios.get(`${apiString}/api/engine`).catch((err) => {
+        const response = await axios.get(`${apiString}/api/wheel`).catch((err) => {
             console.log(err)
         });
         
