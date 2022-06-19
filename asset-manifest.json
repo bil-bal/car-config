@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/car-config/static/css/main.60378075.css",
-    "main.js": "/car-config/static/js/main.6a1d865f.js",
+    "main.js": "/car-config/static/js/main.de501e01.js",
     "static/js/787.941d780c.chunk.js": "/car-config/static/js/787.941d780c.chunk.js",
     "index.html": "/car-config/index.html",
     "main.60378075.css.map": "/car-config/static/css/main.60378075.css.map",
-    "main.6a1d865f.js.map": "/car-config/static/js/main.6a1d865f.js.map",
+    "main.de501e01.js.map": "/car-config/static/js/main.de501e01.js.map",
     "787.941d780c.chunk.js.map": "/car-config/static/js/787.941d780c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.60378075.css",
-    "static/js/main.6a1d865f.js"
+    "static/js/main.de501e01.js"
   ]
 }
