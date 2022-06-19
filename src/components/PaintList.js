@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
 import { setPaintProducts } from '../state/actions/paintActions';
 import PaintProductCard from './PaintProductCard';
+import { apiString } from '..';
 
 const Paints = () => {
 
@@ -11,7 +12,7 @@ const Paints = () => {
     const dispatch = useDispatch();
 
     const fetchPaints = async () => {
-        const response = await axios.get("https://localhost:44363/api/paint").catch((err) => {
+        const response = await axios.get(`${apiString}/api/paint`).catch((err) => {
             console.log(err)
         });
         

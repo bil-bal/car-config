@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
 import { setOptionalProducts } from '../state/actions/optionalActions';
 import OptionalProductCard from './OptionalProductCard';
+import { apiString } from '..';
 
 const Optionals = () => {
 
@@ -11,7 +12,7 @@ const Optionals = () => {
     const dispatch = useDispatch();
 
     const fetchOptionals = async () => {
-        const response = await axios.get("https://localhost:44363/api/optional").catch((err) => {
+        const response = await axios.get(`${apiString}/api/optional`).catch((err) => {
             console.log(err)
         });
         

@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
 import { setWheelProducts } from '../state/actions/wheelActions';
 import WheelProductCard from './WheelProductCard';
+import { apiString } from '..';
 
 const Wheels = () => {
 
@@ -11,7 +12,7 @@ const Wheels = () => {
     const dispatch = useDispatch();
 
     const fetchWheels = async () => {
-        const response = await axios.get("https://localhost:44363/api/wheel").catch((err) => {
+        const response = await axios.get(`${apiString}/api/engine`).catch((err) => {
             console.log(err)
         });
         

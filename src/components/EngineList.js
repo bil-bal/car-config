@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
 import { setEngineProducts } from '../state/actions/engineActions';
 import EngineProductCard from './EngineProductCard';
+import { apiString } from '..';
 
 const Engines = () => {
 
@@ -11,7 +12,7 @@ const Engines = () => {
     const dispatch = useDispatch();
 
     const fetchEngines = async () => {
-        const response = await axios.get("https://localhost:44363/api/engine").catch((err) => {
+        const response = await axios.get(`${apiString}/api/engine`).catch((err) => {
             console.log(err)
         });
         

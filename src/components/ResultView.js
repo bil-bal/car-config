@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Button, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { apiString } from "..";
 
 const ResultView = () => {
 
@@ -32,7 +33,7 @@ const ResultView = () => {
 
     const createResultInDbAndNavigate = async () => {
         setIsLoading(true);
-        const response = await axios.post("https://localhost:44363/api/result", resultModel).catch((err) => {
+        const response = await axios.post(`${apiString}/api/result`, resultModel).catch((err) => {
             console.log(err)
         });
         
