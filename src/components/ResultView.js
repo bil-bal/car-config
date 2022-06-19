@@ -7,7 +7,7 @@ import axios from "axios";
 const ResultView = () => {
 
     const [isLoading, setIsLoading] = useState(false)
-
+    
     const result = useSelector((state) => state.result);
 
     const stateWithoutTotal = Object.values(result);
@@ -32,7 +32,7 @@ const ResultView = () => {
 
     const createResultInDbAndNavigate = async () => {
         setIsLoading(true);
-        const response = await axios.post("https://localhost:44363/api/result", resultModel).then(() => setIsLoading(false)).catch((err) => {
+        const response = await axios.post("https://localhost:44363/api/result", resultModel).catch((err) => {
             console.log(err)
         });
         
