@@ -4,6 +4,7 @@ import axios from "axios";
 import { Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { selectEngine, selectPaint, selectWheel, selectOptional, setPrice, setOrderComplete } from "../state/actions/resultActions";
+import { apiString } from "..";
 
 const ResultSummary = () => {
 
@@ -14,7 +15,7 @@ const ResultSummary = () => {
     const dispatch = useDispatch();
 
     const setDataFromDb = async () => {
-        const response = await axios.get(`https://localhost:44363/api/result/${urlCode}`).catch((err) => {
+        const response = await axios.get(`${apiString}/api/result/${urlCode}`).catch((err) => {
             console.log(err)
         });
 
@@ -35,7 +36,7 @@ const ResultSummary = () => {
     
     const completeOrder = async () => {
         const orderModel = { Id: urlCode, TotalPrice: result.total,  OrderComplete : true };
-        const response = await axios.put(`https://localhost:44363/api/result/${urlCode}`, orderModel).catch((err) => {
+        const response = await axios.put(`${apiString}}/api/result/${urlCode}`, orderModel).catch((err) => {
             console.log(err)
         });
 
