@@ -44,7 +44,7 @@ const ResultView = () => {
 
 
     const renderList = stateWithoutTotal.map((value) => {
-        return (<>{value !== null ? <h4 key={value?.name}>{value.name}</h4> : <></>}</>)
+        return (<div>{value !== null ? <h4 key={value?.name}>{value.name}</h4> : <></>}</div>)
     });
 
     return (
@@ -66,10 +66,6 @@ const ResultView = () => {
                     </Col>
                 </Row>
             </Container>
-                        
-            
-            
-            
         </div>
     );
 };
