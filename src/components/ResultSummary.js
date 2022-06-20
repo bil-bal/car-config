@@ -37,7 +37,7 @@ const ResultSummary = () => {
     
     const completeOrder = async () => {
         const orderModel = { Id: urlCode, TotalPrice: result.total,  OrderComplete : true };
-        const response = await axios.put(`${apiString}}/api/result/${urlCode}`, orderModel).catch((err) => {
+        const response = await axios.put(`${apiString}/api/result/${urlCode}`, orderModel).catch((err) => {
             console.log(err)
         });
 
