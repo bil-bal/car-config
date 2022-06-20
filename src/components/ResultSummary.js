@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { selectEngine, selectPaint, selectWheel, selectOptional, setPrice, setOrderComplete } from "../state/actions/resultActions";
 import { apiString } from "..";
+import { render } from "@testing-library/react";
 
 const ResultSummary = () => {
 
@@ -13,14 +14,14 @@ const ResultSummary = () => {
     const result = useSelector((state) => state.result);
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const setDataFromDb = async () => {
         const response = await axios.get(`${apiString}/api/result/${urlCode}`).catch((err) => {
-            console.log(err)
-        });
+            console.log(err);
 
-        console.log("response")
-        console.log(response)
+            navigate("/")
+        });
 
         dispatch(selectEngine(response.data.engine))
         dispatch(selectPaint(response.data.paint))
@@ -47,8 +48,6 @@ const ResultSummary = () => {
 
     const stateWithoutTotal = Object.values(result);
     stateWithoutTotal.pop();
-
-    const navigate = useNavigate();
 
     const renderList = stateWithoutTotal.map((value) => {
         return (<>{value !== null ? <h4 key={value?.name}>{value.name}</h4> : <></>}</>)
