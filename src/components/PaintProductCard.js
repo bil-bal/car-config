@@ -33,7 +33,6 @@ const PaintProductCard = (props) => {
 
     return (
         <Card >
-            <Card.Img src={props.item.image}/>
             <Card.Body>
                 <Card.Title>Name: {props.item.name}</Card.Title>
                 <Card.Text>Price: {props.item.price} €</Card.Text>

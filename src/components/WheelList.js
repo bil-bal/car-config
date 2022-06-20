@@ -33,11 +33,14 @@ const Wheels = () => {
 
     return (
         <div>
-            <div>Wheel List</div>
+            
             {Object.keys(wheels.wheels).length == 0 ? (<Spinner animation="border" role="status">
   <span className="visually-hidden">Loading...</span>
 </Spinner>) : <Container>
                 <Row>
+                    <Col>
+                        <div><img height={125} src={require("../images/wheels.png")} /></div>
+                    </Col>
                     {renderList}
                 </Row>
             </Container>

@@ -33,11 +33,13 @@ const Optionals = () => {
 
     return (
         <div>
-            <div>Optional List</div>
             {Object.keys(optionals.optionals).length == 0 ? (<Spinner animation="border" role="status">
   <span className="visually-hidden">Loading...</span>
 </Spinner>) : <Container>
-                <Row>
+                <Row>                    
+                    <Col>
+                        <div><img height={125} src={require("../images/optionals.png")} /></div>
+                    </Col>
                     {renderList}
                 </Row>
             </Container>
