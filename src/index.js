@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const apiString = "https://carconfiguratorapi20220617152249.azurewebsites.net";
 
-// local api https://localhost:44363
+// export const apiString = "https://localhost:44363";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

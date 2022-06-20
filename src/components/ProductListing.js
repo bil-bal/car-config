@@ -10,9 +10,13 @@ const ProductListing = () => {
     return (
         <div>
             <Engines />
+            <br />
             <Paints />
+            <br />
             <Wheels />
+            <br />
             <Optionals />
+            <br />
             <ResultView />
         </div>
     );

@@ -1,6 +1,6 @@
 import React, { useState }from "react";
 import { useSelector } from 'react-redux';
-import { Button, Spinner } from "react-bootstrap";
+import { Button, Container, Row, Col, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { apiString } from "..";
@@ -50,11 +50,25 @@ const ResultView = () => {
     return (
         <div>
             <br />
-            {renderList}            
-            <h2>Total Price: {result.total} €</h2>
-            {isLoading ? <Spinner animation="border" role="status">
-  <span className="visually-hidden">Loading...</span>
-</Spinner> : <Button disabled={!enableButton} onClick={() => createResultInDbAndNavigate()} variant="success" >View Summary</Button>}
+            <Container>
+                <Row>
+                    <Col>
+                        {renderList}
+                    </Col>
+                    <Col>
+                        <h2>Total Price: {result.total} €</h2>
+                    </Col>
+                    <Col>
+                    {isLoading ? <Spinner animation="border" role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </Spinner> : 
+                                <Button disabled={!enableButton} onClick={() => createResultInDbAndNavigate()} variant="success" >View Summary</Button>}
+                    </Col>
+                </Row>
+            </Container>
+                        
+            
+            
             
         </div>
     );
