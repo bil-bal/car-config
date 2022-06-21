@@ -58,7 +58,9 @@ const ResultSummary = () => {
         <div>
             <br />
             {renderList}
+            <hr />
             <h2>Total Price: {result.total} €</h2>
+            <hr />
             <Button variant="link" onClick={() => navigate("/")}>Go Back</Button>
             {result.orderComplete ? <h2>Thanks for your order!</h2>: <Button variant="danger" onClick={() => completeOrder()} >Order now</Button>}
             <p>Use the following link to get back to this page: <a href={window.location.href}>{window.location.href}</a></p>

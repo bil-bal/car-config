@@ -10,13 +10,13 @@ const ProductListing = () => {
     return (
         <div>
             <Engines />
-            <br />
+            <hr />
             <Paints />
-            <br />
+            <hr />
             <Wheels />
-            <br />
+            <hr />
             <Optionals />
-            <br />
+            <hr />
             <ResultView />
         </div>
     );
