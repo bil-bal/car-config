@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/car-config/static/css/main.60378075.css",
-    "main.js": "/car-config/static/js/main.dbfc9096.js",
+    "main.js": "/car-config/static/js/main.c3e3a74b.js",
     "static/js/787.941d780c.chunk.js": "/car-config/static/js/787.941d780c.chunk.js",
     "static/media/wheels.png": "/car-config/static/media/wheels.8023b24aa6a35502fdf9.png",
     "static/media/paints.png": "/car-config/static/media/paints.351d0b262db5fbe91532.png",
@@ -9,11 +9,11 @@
     "static/media/optionals.png": "/car-config/static/media/optionals.0bd136300e071e2198b9.png",
     "index.html": "/car-config/index.html",
     "main.60378075.css.map": "/car-config/static/css/main.60378075.css.map",
-    "main.dbfc9096.js.map": "/car-config/static/js/main.dbfc9096.js.map",
+    "main.c3e3a74b.js.map": "/car-config/static/js/main.c3e3a74b.js.map",
     "787.941d780c.chunk.js.map": "/car-config/static/js/787.941d780c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.60378075.css",
-    "static/js/main.dbfc9096.js"
+    "static/js/main.c3e3a74b.js"
   ]
 }
